@@ -1,12 +1,10 @@
 ---
-- name: Download and execute a script.
-  hosts: server
-  user: test_user
+- hosts: all
+  name: Transfer and execute the new-vm-setup script
   sudo: yes
   tasks:
      - name: Transfer the script
-       local_action: command sudo wget https://raw.githubusercontent.com/nathen418/ubuntu-vm-scripts/main/setup-stage-2.sh 
-       copy: src=test.sh dest=/home/test_user mode=0777
+       copy: src=/scripts/new-vm-setup.sh dest=/home/semaphoreadmin/ mode=0777
 
      - name: Execute the script
-       local_action: command sudo sh /home/test_user/test.sh
+       local_action: command sudo sh /home/semaphoreadmin/new-vm-setup.sh
