@@ -15,4 +15,6 @@
         - fail2ba
         - glances
         - docker-compose
-        
+        - clamav
+        - clamtk
+        - qemu-guest-agent
