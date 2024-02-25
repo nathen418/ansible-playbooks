@@ -18,7 +18,7 @@
         - clamav
         - clamtk
         - qemu-guest-agent
-    - name: Install foo
+    - name: Install bashtop
   community.general.snap:
     name:
       - bashtop
