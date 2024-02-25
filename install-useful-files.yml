@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache and make sure base packages are all installed.
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - openssh-server 
+        - git
+        - speedtest-cli
+        - docker.io
+        - neofetch
+        - fail2ba
+        - glances
+        - docker-compose
+        
